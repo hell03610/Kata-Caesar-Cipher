@@ -3,7 +3,7 @@ Caesar Cipher Kata
 The Challenge
 -------------------
 
-Solution for the challenge announced in [Solveet.com](http://www.solveet.com/exercises/Kata-Tennis/13) written in Ruby and Rspec
+Solution for the challenge announced in [Solveet.com](http://www.solveet.com/exercises/Cifrado-Cesar/145) written in Ruby and Rspec
 
 Running
 -------------------
