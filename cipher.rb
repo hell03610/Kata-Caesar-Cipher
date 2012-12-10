@@ -28,6 +28,7 @@ class Cipher
 
 	class Alphabet
 		ALPHABET =  %w{a b c d e f g h i j k l m n o p q r s t u v w x y z}
+		ALPHABET_SIZE = ALPHABET.size()
 		
 		def self.hasCharacter?(character)
 			return !ALPHABET.index(character.downcase).nil?
@@ -35,7 +36,7 @@ class Cipher
 
 		def self.getFromOffset(character, offset)
 			position = ALPHABET.index(character.downcase)
-			new_position = (position + offset) % ALPHABET.size()
+			new_position = (position + offset) % ALPHABET_SIZE
 			return ALPHABET[new_position] 
 		end
 	end
