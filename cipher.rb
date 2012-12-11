@@ -8,17 +8,17 @@ class Cipher
 	end
 
 	def encode(text)
-		cipher_character(text, ENCODE_DIRECTION)		
+		cipher(text, ENCODE_DIRECTION)		
 	end
 
 	def decode(text)
-		cipher_character(text, DECODE_DIRECTION)
+		cipher(text, DECODE_DIRECTION)
 	end
 
 private
 	
 	def cipher(text, direction)
-		text.chars.map { |character| encode_character(character, direction) }.join
+		text.chars.map { |character| cipher_character(character, direction) }.join
 	end
 
 	def cipher_character(character, direction)
