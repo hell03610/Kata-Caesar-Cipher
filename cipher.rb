@@ -8,24 +8,23 @@ class Cipher
 	end
 
 	def encode(text)
-		text.chars.map { |character| encode_character(character) }.join
+		cipher_character(text, ENCODE_DIRECTION)		
 	end
 
 	def decode(text)
-		text.chars.map { |character| decode_character(character) }.join
+		cipher_character(text, DECODE_DIRECTION)
 	end
 
+private
+	
+	def cipher(text, direction)
+		text.chars.map { |character| encode_character(character, direction) }.join
+	end
 
-	def encode_character(character)
+	def cipher_character(character, direction)
 		return character unless Alphabet.has_character?(character)
-		Alphabet.next_character(character, offset * ENCODE_DIRECTION)
-	end
-
-	def decode_character(character)
-		return character unless Alphabet.has_character?(character)
-		Alphabet.next_character(character, offset * DECODE_DIRECTION)
-	end
-
+		Alphabet.next_character(character, offset * direction)
+	end	
 
 	class Alphabet
 		ALPHABET =  %w{a b c d e f g h i j k l m n o p q r s t u v w x y z}
